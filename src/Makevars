@@ -1,0 +1,13 @@
+LIBDIR = .
+STATLIB = $(LIBDIR)/libdoubler.a
+PKG_LIBS = -L$(LIBDIR) -ldoubler -lresolv
+
+all: clean
+
+$(SHLIB): $(STATLIB)
+
+$(STATLIB):
+	nim c --cc:gcc --d:release --app:staticlib doubler.nim
+
+clean:
+	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) nimcache
