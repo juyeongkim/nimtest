@@ -6,15 +6,9 @@ latex: false
 fortran: false
 pandoc: false
 
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-    - os: osx
-      osx_image: xcode9.2
-      brew_packages: nim
+os:
+  - linux
+  - osx
 
-addons:
-  apt:
-    packages:
-      - nim
+before_install:
+  - if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install nim; else brew install nim; fi
