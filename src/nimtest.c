@@ -5,7 +5,6 @@ extern int DoubleIt() ;
 extern double DoubleFloat() ;
 extern int Opposite() ;
 extern int random_number() ;
-extern char * Hello() ;
 
 
 SEXP nimdouble(SEXP x){
@@ -22,8 +21,4 @@ SEXP nimbool(SEXP x){
 
 SEXP nimrandom(SEXP x){
   return Rf_ScalarInteger( random_number( INTEGER(x)[0] ) ) ;
-}
-
-SEXP nimhello(){
-  return Rf_ScalarString(Rf_mkCharCE(Hello(), CE_UTF8));
 }

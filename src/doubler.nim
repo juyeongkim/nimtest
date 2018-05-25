@@ -18,8 +18,3 @@ proc Opposite(x: bool): bool {.exportc.} =
 proc random_number(x: int): int {.cdecl, exportc.} =
   randomize()
   rand(x)
-
-proc Hello(): char {.cdecl, exportc.} =
-  let s: char = 'x'
-  let p: pointer = s.addr()
-  p

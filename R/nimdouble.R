@@ -28,7 +28,3 @@ nimboolly <- function(x) {
 randy <- function(x) {
   .Call("nimrandom", x, PACKAGE = "nimtest")
 }
-
-hello <- function() {
-  .Call("nimhello", PACKAGE = "nimtest")
-}
