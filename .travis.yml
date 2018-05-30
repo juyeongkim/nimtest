@@ -12,10 +12,10 @@ matrix:
       dist: trusty
     - os: osx
       osx_image: xcode9.3
-      brew_packages: nim
 
-addons:
-  apt:
-    update: true
-    packages:
-      - nim
+before_install:
+  - |
+      curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+      sh init.sh -y
+  - export PATH=$HOME/.nimble/bin:$PATH
+  - export CHOOSENIM_NO_ANALYTICS=1
